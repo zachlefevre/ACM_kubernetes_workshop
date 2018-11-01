@@ -1,0 +1,63 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capa
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: capa
+  template:
+    metadata:
+      labels:
+        app: capa
+    spec:
+      containers:
+      - name: capa
+        image: frlnbrg/cap_a
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capb
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: capb
+  template:
+    metadata:
+      labels:
+        app: capb
+    spec:
+      containers:
+      - name: capb
+        image: frlnbrg/cap_b
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capa
+spec:
+  selector:
+    app: capa
+  ports:
+  - port: 8080
+    nodePort: 30080
+  type: NodePort
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: capa
+spec:
+  selector:
+    app: capa
+  ports:
+  - port: 8080
+    nodePort: 30080
+  type: NodePort
