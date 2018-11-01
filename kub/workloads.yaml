@@ -53,11 +53,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: capa
+  name: capb
 spec:
   selector:
-    app: capa
+    app: capb
   ports:
   - port: 8080
-    nodePort: 30080
+    nodePort: 30081
   type: NodePort

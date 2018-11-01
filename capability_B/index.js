@@ -6,7 +6,7 @@ const app = express()
 
 app.get('/', (req, res)=> {
     console.log("req: ", req)
-    res.status(200).send("<h1>CAPABILITY B</h1>\n<h2>V2</h2>")
+    res.status(200).send("<h1>CAPABILITY B</h1>\n<h2>V3</h2>")
 
 })
 
